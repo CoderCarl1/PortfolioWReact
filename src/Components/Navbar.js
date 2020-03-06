@@ -1,26 +1,60 @@
 import React from "react";
 import "../Styles/Navbar.scss";
-import Github from '../assetts/Github.svg'
-import LinkedIn from '../assetts/Linkedin.svg'
-import CV from '../assetts/CV.svg'
+import Github from "../assetts/Github.svg";
+import LinkedIn from "../assetts/Linkedin.svg";
+import CV from "../assetts/CV.svg";
+import DarkLight from "./DarkLight.js";
 
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <ul className="navLinks">
-        <li><a href="#" >Home</a></li>
-        <li><a href="#" >Projects</a></li>
+      <ul className="nav-links">
+        <h3>LOGO</h3>
+        <Link exact to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/Projects">
+          <li>Projects</li>
+        </Link>
+        <Link to="/Contact">
+          <li>Contacts</li>
+        </Link>
         <li>
           <ul className="icons">
             <li>
-              <a href="https://www.linkedin.com/in/carl-davidson/"><img src={LinkedIn} alt="LinkedIn of Carl Davidson" title="LinkedIn" className="icon" /> </a>
+              <a href="https://www.linkedin.com/in/carl-davidson/">
+                <img
+                  src={LinkedIn}
+                  alt="LinkedIn of Carl Davidson"
+                  title="LinkedIn"
+                  className="icon"
+                />{" "}
+              </a>
             </li>
             <li>
-              <a href="https://github.com/CoderCarl1"><img src={Github} alt="Github of Carl Davidson" title="Github" className="icon" /> </a>
+              <a href="https://github.com/CoderCarl1">
+                <img
+                  src={Github}
+                  alt="Github of Carl Davidson"
+                  title="Github"
+                  className="icon"
+                />{" "}
+              </a>
             </li>
+            <Link to="/CV-Carl">
+              <li>
+                <img
+                  src={CV}
+                  alt="PDF Resume of Carl Davidson"
+                  title="Resume"
+                  className="icon"
+                />
+              </li>
+            </Link>
             <li>
-              <a href="#" ><img src={CV} alt="PDF Resume of Carl Davidson" title="Resume" className="icon" /></a>
+              <DarkLight />
             </li>
           </ul>
         </li>

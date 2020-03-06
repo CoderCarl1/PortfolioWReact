@@ -3,6 +3,11 @@ $white: #ffffff;
 $green: #52a752;
 $purple: #722172;
 
+
+@mixin flex-column{
+  display: flex;
+  flex-direction: column;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,23 +22,19 @@ $purple: #722172;
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  background: $BG-color;
+@include flex-column;
+justify-content: space-between;
   height: 100vh;
   width: 100vw;
-}
 
+}
+.navbar{
+justify-self: flex-end;
+}
 ul {
     list-style-type: none;
 }
-a {
-    color: white;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
+
 .logo a:hover {
     text-decoration: none;
 }

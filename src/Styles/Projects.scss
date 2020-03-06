@@ -1,0 +1,56 @@
+$max-tab-count: 5;
+$tab-wrap-border-radius: 6px;
+.tab-wrap {
+  transition: 0.3s box-shadow ease;  
+  display: flex;
+  // flex-wrap: wrap;
+  position: relative;
+  list-style: none;
+  background-color: pink;
+}
+.tab {
+  display: none;
+  @for $i from 1 through 5 {
+    &:checked:nth-of-type(#{$i}) ~ .tab__content:nth-of-type(#{$i}) {
+      opacity: 1;
+      transition: 0.5s opacity ease-in, 0.8s transform ease;
+      position: relative;
+      // top: 0;
+      z-index: 100;
+      transform: translateY(0px);
+    }
+  }
+  + label {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: red;
+    // flex-grow: 3;
+    text-align: center;
+    background-color: #f2f2f2;
+    user-select: none;
+    text-align: center;
+    transition: 0.3s background-color ease, 0.3s box-shadow ease;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-right: 20px;
+    &:hover {
+      background-color: #f9f9f9;
+      box-shadow: 0 1px 0 #f4f4f4 inset;
+    }
+  }
+  &__content {
+    // padding: 10px 25px;
+    // background-color: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    transform: translateY(-3px);
+    
+  }
+}
