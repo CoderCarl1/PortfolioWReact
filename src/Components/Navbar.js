@@ -12,7 +12,7 @@ function Navbar() {
     <div className="navbar">
       <ul className="nav-links">
         <h3>LOGO</h3>
-        <Link exact to="/">
+        <Link to="/">
           <li>Home</li>
         </Link>
         <Link to="/Projects">

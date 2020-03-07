@@ -1,54 +1,46 @@
-import React, {useState} from 'react'
-import '../Styles/Projects.scss'
-
+import React, { useState } from "react";
+import "../Styles/Projects.scss";
+import Keylord from "./Projects/Keylord";
+import HTMLPortfolio from "./Projects/HTMLPortfolio";
+import Tat2Market from "./Projects/Tat2Market";
+import ProjectTab4 from "./Projects/CMCFlow";
+import ProjectTab5 from "./ProjectTab5";
 
 function Projects() {
+  const [tab, setTab] = useState("tab1");
 
-const [activeTab, setActiveTab] = useState('tab1')
+  console.log(tab);
+  return (
+    <section className="tab-wrap">
+      <section className="tab-select">
+        <button onClick={() => setTab("tab1")}>tab1</button>
+        <button onClick={() => setTab("tab2")}>tab2</button>
+        <button onClick={() => setTab("tab3")}>tab3</button>
+        <button onClick={() => setTab("tab4")}>tab4</button>
+        <button onClick={() => setTab("tab5")}>tab5</button>
+      </section>
+      <section className="tab-info">
+        {(function() {
+          switch (tab) {
+            case "tab1":
+              return <Keylord />;
+            case "tab2":
+              return <HTMLPortfolio />;
+            case "tab3":
+              return <Tat2Market />;
+            case "tab4":
+              return <ProjectTab4 />;
+            case "tab5":
+              return <ProjectTab5 />;
+            default:
+              return null;
+          }
+        })()}
 
-// .classNameName = activeTab
 
-// setActiveTab()
-
-
-// click on a link
-// set classNameName of
-
-    return (
-
-        <section className="tab-wrap">
-            {/* <section> */}
-            <input type="radio" id="tab1" name="tabGroup1" className="tab" checked />
-            <label for="tab1">Short</label>
-        
-            <input type="radio" id="tab2" name="tabGroup1" className="tab" />
-            <label for="tab2">Medium</label>
-        
-            <input type="radio" id="tab3" name="tabGroup1" className="tab" />
-            <label for="tab3">Long</label>
-            {/* </section> */}
-            {/* <section className="tab-content"> */}
-            <div className="tab__content">
-              <h3>Tab1</h3>
-              <p>Tab1 Content</p>
-            </div>
-        
-            <div className="tab__content">
-              <h3>Tab2</h3>
-              <p>Tab 2 Content</p>
-            </div>
-        
-            <div className="tab__content">
-              <h3>Tab3</h3>
-              <p>Tab 3 Content</p>
-            </div>
-            {/* </section> */}
-        
-          </section>
-
-        )
+      </section>
+    </section>
+  );
 }
 
-export default Projects
-
-
+export default Projects;
