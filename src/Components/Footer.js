@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <section id="copyright">
-        <p>Copyright &copy Carl Davidson 2019</p>
+        <p>Copyright © Carl Davidson 2020</p>
       </section>
     </footer>
   );

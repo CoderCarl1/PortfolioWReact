@@ -1,12 +1,20 @@
 $white: white;
 
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .tab-wrap{
   display: flex;
 flex-grow: 1;
 
 .tab-select{
-  display: flex;
-  flex-direction: column;
+@include flex-column;
   width: 33%;
   height: 100%;
   
@@ -21,16 +29,43 @@ flex-grow: 1;
 margin: 0 0 2em 2em;
   
   .tab-content{
-    display: flex;
+@include flex-column;
+    .techstack{
+      display: flex;
+    }
     .project-links{
-      
-      
-      li{
-        background: $white;
-        height: 2.5em;
-        width: 2.5em;
-        border: 1px solid black;
+@include flex-center;
+// @include flex-column;
+justify-content: space-evenly;
+// .icon{
+  // border-radius: 15%;
+// }
+ul{
+  @include flex-column;
+}
+
+li{
+  // background: grey;
+        // background: $white;
+        // height: 2.5em;
+        // width: 2.5em;
+        // border: 1px solid black;
+        flex-grow: 1;
+        border: 1px solid white;
+        border-radius: 25%;
+        padding: 1em;
+        background: grey;
         margin-top: 1em;
+        margin-right: 5em;
+        span{
+          background: grey;
+          display: flex;
+
+          // @include flex-center;
+          // height: 100%;
+          // text-align: center;
+          margin: 0 auto;
+        }
       }
     }
   }

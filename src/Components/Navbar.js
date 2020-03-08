@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <ul className="nav-links">
-        <h3>LOGO</h3>
+        <li><h3>LOGO</h3></li>
         <Link to="/">
           <li>Home</li>
         </Link>
@@ -30,7 +30,7 @@ function Navbar() {
                   alt="LinkedIn of Carl Davidson"
                   title="LinkedIn"
                   className="icon"
-                />{" "}
+                />
               </a>
             </li>
             <li>
@@ -40,7 +40,7 @@ function Navbar() {
                   alt="Github of Carl Davidson"
                   title="Github"
                   className="icon"
-                />{" "}
+                />
               </a>
             </li>
             <Link to="/CV-Carl">
